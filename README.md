@@ -1,8 +1,6 @@
 # Description
 
-The Row Numbering Binder allows you to add numbering to your datalist. Simply point the binder to another binder and gives the column a name. 
-
-Do see [documentation and sample app](https://dev.joget.org/community/display/marketplace/Cardano+Blockchain+Pack).
+The **Row Numbering Binder** allows you to add numbering to your datalist. Simply use this binder to configure your actual binder and a numbering column would be added automatically.
 
 # Getting Help
 
