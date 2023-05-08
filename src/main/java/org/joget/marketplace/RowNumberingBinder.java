@@ -46,10 +46,10 @@ public class RowNumberingBinder extends DataListBinderDefault {
         if(!columns.isEmpty()){
             for (int i = 0; i < columns.size(); i++){
                 int currentIndex = i + 1 + start;
-                if(columns.get(i).getClass().getName().equals("org.joget.apps.form.model.FormRow")) {
+                if(columns.get(i) instanceof FormRow) {
                     ((FormRow) columns.get(i)).setProperty("index", Integer.toString(currentIndex));
                 }
-                if(columns.get(i).getClass().getName().equals("java.util.HashMap")) {
+                else if(columns.get(i) instanceof HashMap) {
                     ((HashMap) columns.get(i)).put("index", currentIndex);
                 }
             }
@@ -95,10 +95,11 @@ public class RowNumberingBinder extends DataListBinderDefault {
         // add an index column before iterating through the query result
         DataListColumn n = new DataListColumn();
         n.setName("index");
-        n.setLabel("Index");
+        n.setLabel((String)getProperty("custom_label"));
         n.setHidden(false);
         n.setProperty("id", "number");
-        n.setProperty("sort", "true");
+        n.setProperty("sortable", "true");
+        n.setProperty("style", "text-align: right;");
         columns.add(n);
         DataListColumn[] designColumns = dataList.getColumns();
         for(DataListColumn d : designColumns){

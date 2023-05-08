@@ -9,6 +9,12 @@
                 "url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions",
                 "options_ajax": "[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.datalist.model.DataListBinder&exclude=org.joget.datalist.DynamicColumnsDatalistBinder",
                 "required": "true"
+            },
+            {
+                "name": "custom_label",
+                "label": "@@datalist.sc.custom_label@@",
+                "type": "textfield",
+                "required": "true"
             }
         ]
     }
